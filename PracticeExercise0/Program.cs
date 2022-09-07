@@ -7,26 +7,27 @@ namespace PracticeExcercise0
 
         static void Main(string[] args)
         {
-            //Console.WriteLine(IsPalindrome("mom "));
-            //Console.WriteLine(IsPalindrome("Mom"));
+            Console.WriteLine(IsPalindrome("mom "));
+            Console.WriteLine(IsPalindrome("Mom"));
             Console.WriteLine(IsPalindrome("Race car"));
             Console.WriteLine(IsPalindrome("A nut for a jar of tuna"));
 
-            //Console.WriteLine(Reverse("coffee"));
-            //Console.WriteLine(Reverse("abcdefghijklmnopqrstuvwxyz"));
-            //Console.WriteLine(Reverse("Dad"));
-            //Console.WriteLine(Reverse(""));
-            //Console.WriteLine(Reverse("savannaH"));
+            Console.WriteLine(Reverse("coffee"));
+            Console.WriteLine(Reverse("abcdefghijklmnopqrstuvwxyz"));
+            Console.WriteLine(Reverse("Dad"));
+            Console.WriteLine(Reverse(""));
+            Console.WriteLine(Reverse("savannaH"));
 
             Console.WriteLine(ReverseInt(369)); // 963
             Console.WriteLine(ReverseInt(-369)); // -963
 
 
-            //Console.WriteLine(IsUnique("mom"));
-            //IsUnique("");
-            //IsUnique("mom");
-            //IsUnique("Robbie");
-            //IsUnique("Judah");
+            Console.WriteLine(IsUnique("mom"));
+            Console.WriteLine(IsUnique(""));
+            Console.WriteLine(IsUnique("mom"));
+            Console.WriteLine(IsUnique("Robbie"));
+            Console.WriteLine(IsUnique("Judah"));
+            
 
         }
 
@@ -102,8 +103,30 @@ namespace PracticeExcercise0
         // #4
         public static bool IsNeilNumber(int i)
         {
-            return true;
-        }
 
+            string numString = i.ToString();
+            
+
+            int nameLength = numString.Length;
+            int sum = 0;
+            int digit = 0;
+            int pemdas = 0;
+            foreach (char s in numString)
+            {
+                digit = int.Parse(s.ToString());
+                pemdas = (int)Math.Pow(digit, nameLength);
+                sum += pemdas;
+            }
+            if (sum == i)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
     }
 }
